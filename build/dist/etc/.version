@@ -1,0 +1,6 @@
+major_version=${ONQ_MAJOR_VERSION}
+minor_version=${ONQ_MINOR_VERSION}
+update_version=${ONQ_UPDATE_VERSION}
+patch_version=${ONQ_PATCH_VERSION}
+build_number=${ONQ_BUILD_VERSION}
+timestamp=20141208.1550

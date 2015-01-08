@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install4j version="4.2.8" transformSequenceNumber="2">
+  <directoryPresets config="C:/Users/ckelly/DuckHunt/Duck Hunt/build/dist/etc/images" />
+  <application name="${compiler:MAIN_APP_FULL_NAME}" distributionSourceDir="" applicationId="6494-5488-8584-1031" mediaDir="C:/Users/ckelly/Desktop" mediaFilePattern="DuckHunt" compression="6" lzmaCompression="false" pack200Compression="false" excludeSignedFromPacking="true" keepModificationTimes="false" missingFilesStrategy="warn" shortName="${compiler:MAIN_APP_SHORT_NAME}" publisher="${compiler:PUBLISHER}" publisherWeb="${compiler:PUBLISHER_URL}" version="${compiler:APP_VERSION}" allPathsRelative="false" backupOnSave="false" autoSave="false" convertDotsToUnderscores="false" macSignature="????" installerName="" javaMinVersion="1.6" javaMaxVersion="1.7" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
+    <languages skipLanguageSelection="false" languageSelectionInPrincipalLanguage="false">
+      <principalLanguage id="en" customLocalizationFile="" />
+      <additionalLanguages />
+    </languages>
+    <searchSequence>
+      <envVar name="JAVA_HOME" />
+      <envVar name="JDK_HOME" />
+      <registry />
+    </searchSequence>
+    <variables>
+      <variable name="MAIN_APP_FULL_NAME" value="Duck Hunt" />
+      <variable name="MAIN_APP_SHORT_NAME" value="Duck Hunt" />
+      <variable name="PUBLISHER" value="" />
+      <variable name="PUBLISHER_URL" value="" />
+      <variable name="APP_VERSION" value="" />
+      <variable name="DISTRIBUTION_DIR" value="" />
+      <variable name="ACTIVEMQ_DIR" value="" />
+      <variable name="JREPORTS_DIR" value="" />
+      <variable name="WINDOWS_INSTALL_DIR" value="" />
+      <variable name="WINDOWS_PROGRAM_GROUP" value="" />
+      <variable name="UNIX_INSTALL_DIR" value="" />
+      <variable name="WINDOWS_INSTALLER_NAME" value="" />
+      <variable name="WINDOWS64_INSTALLER_NAME" value="" />
+      <variable name="LINUX_INSTALLER_NAME" value="" />
+      <variable name="SOLARIS_INSTALLER_NAME" value="" />
+      <variable name="AIX_INSTALLER_NAME" value="" />
+      <variable name="APP1_LAUNCHER_NAME" value="Duck Hunt" />
+      <variable name="APP1_EXE_NAME" value="DuckHunt" />
+      <variable name="APP1_SMALL_ICON" value="" />
+      <variable name="APP1_LARGE_ICON" value="" />
+      <variable name="APP1_CLASS" value="" />
+      <variable name="APP1_VM_PARMS" value="XX:MaxPermSize=256m" />
+      <variable name="APP2_LAUNCHER_NAME" value="" />
+      <variable name="APP2_EXE_NAME" value="" />
+      <variable name="APP2_SMALL_ICON" value="" />
+      <variable name="APP2_LARGE_ICON" value="" />
+      <variable name="APP2_CLASS" value="" />
+      <variable name="APP2_VM_PARMS" value="" />
+      <variable name="APP3_LAUNCHER_NAME" value="" />
+      <variable name="APP3_EXE_NAME" value="" />
+      <variable name="APP3_SMALL_ICON" value="" />
+      <variable name="APP3_LARGE_ICON" value="" />
+      <variable name="APP3_CLASS" value="" />
+      <variable name="APP3_VM_PARMS" value="" />
+      <variable name="APP4_LAUNCHER_NAME" value="" />
+      <variable name="APP4_EXE_NAME" value="" />
+      <variable name="APP4_SMALL_ICON" value="" />
+      <variable name="APP4_LARGE_ICON" value="" />
+      <variable name="APP4_CLASS" value="" />
+      <variable name="APP4_VM_PARMS" value="" />
+      <variable name="APP5_LAUNCHER_NAME" value="" />
+      <variable name="APP5_EXE_NAME" value="" />
+      <variable name="APP5_SMALL_ICON" value="" />
+      <variable name="APP5_LARGE_ICON" value="" />
+      <variable name="APP5_CLASS" value="" />
+      <variable name="APP5_VM_PARMS" value="" />
+      <variable name="APP6_LAUNCHER_NAME" value="" />
+      <variable name="APP6_EXE_NAME" value="" />
+      <variable name="APP6_SMALL_ICON" value="" />
+      <variable name="APP6_LARGE_ICON" value="" />
+      <variable name="APP6_CLASS" value="" />
+      <variable name="APP6_VM_PARMS" value="" />
+      <variable name="APP7_LAUNCHER_NAME" value="" />
+      <variable name="APP7_EXE_NAME" value="" />
+      <variable name="APP7_SMALL_ICON" value="" />
+      <variable name="APP7_LARGE_ICON" value="" />
+      <variable name="APP7_CLASS" value="" />
+      <variable name="APP7_VM_PARMS" value="" />
+      <variable name="IMAGES_DIR" value="" />
+    </variables>
+  </application>
+  <files>
+    <filesets />
+    <roots />
+    <mountPoints>
+      <mountPoint id="534060795" root="" location="" mode="755" />
+    </mountPoints>
+    <entries>
+      <dirEntry mountPoint="534060795" file="C:/Users/ckelly/DuckHunt/Duck Hunt/build/dist/" overwrite="4" shared="false" mode="644" uninstallMode="0" excludeSuffixes="" dirMode="755">
+        <exclude />
+      </dirEntry>
+    </entries>
+    <components />
+  </files>
+  <launchers>
+    <launcher name="${compiler:APP1_LAUNCHER_NAME}" id="1613676031" external="false" excludeFromMenu="false" menuName="" icnsFile="" pngIcon16File="C:/Users/ckelly/DuckHunt/Duck Hunt/build/dist/etc/images/duckIcon_16x16.png" pngIcon32File="C:/Users/ckelly/DuckHunt/Duck Hunt/build/dist/etc/images/duckIcon_32x32.png" macServiceDependencies="" swtApp="true" fileset="">
+      <executable name="Duck Hunt" type="1" iconSet="true" iconFile="" executableDir="bin" redirectStderr="false" stderrFile="error_connectioncreator.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="1" changeWorkingDirectory="true" workingDirectory=".." singleInstance="true" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false">
+        <versionInfo include="true" fileVersion="${compiler:APP_VERSION}" fileDescription="${compiler:APP6_LAUNCHER_NAME}" legalCopyright="Copyright ${compiler:PUBLISHER}. All rights reserved worldwide." internalName="${compiler:APP6_EXE_NAME}" productName="Duck Hunt" />
+      </executable>
+      <splashScreen show="false" autoOff="true" alwaysOnTop="true" width="0" height="0" bitmapFile="" java6SplashScreen="false">
+        <text>
+          <statusLine x="20" y="20" text="" font="Arial" fontSize="8" fontColor="0,0,0" fontWeight="500" />
+          <versionLine x="20" y="40" text="version ${compiler:sys.version}" font="Arial" fontSize="8" fontColor="0,0,0" fontWeight="500" />
+        </text>
+      </splashScreen>
+      <java mainClass="game.DuckHunt" vmParameters="${compiler:APP1_VM_PARMS}" arguments="" allowVMPassthroughParameters="true" preferredVM="" bundleRuntime="true">
+        <classPath>
+          <scanDirectory location="lib" failOnError="true" />
+          <directory location="etc" failOnError="true" />
+          <directory location="." failOnError="true" />
+        </classPath>
+        <nativeLibraryDirectories />
+      </java>
+      <includedFiles />
+      <unextractableFiles />
+      <customScript mode="1" file="">
+        <scriptLines />
+      </customScript>
+    </launcher>
+  </launchers>
+  <installerGui installerType="1" suggestPreviousProgramGroup="false" addOnAppId="" suggestPreviousLocations="false">
+    <customCode useInstalledFiles="false" />
+    <applications>
+      <application name="" id="installer" beanClass="com.install4j.runtime.beans.applications.InstallerApplication" enabled="true" commentSet="false" comment="" customIcnsFile="" customIcoFile="">
+        <serializedBean>
+          <java class="java.beans.XMLDecoder">
+            <object class="com.install4j.runtime.beans.applications.InstallerApplication">
+              <void property="allowConsole">
+                <boolean>false</boolean>
+              </void>
+              <void property="resizable">
+                <boolean>false</boolean>
+              </void>
+              <void property="watermark">
+                <boolean>false</boolean>
+              </void>
+            </object>
+          </java>
+        </serializedBean>
+        <startup>
+          <screen name="" id="1613676141" beanClass="com.install4j.runtime.beans.screens.StartupScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.StartupScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+        </startup>
+        <screens>
+          <screen name="" id="1613676142" beanClass="com.install4j.runtime.beans.screens.WelcomeScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.WelcomeScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="1613676143" beanClass="com.install4j.runtime.beans.screens.InstallationDirectoryScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.InstallationDirectoryScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="1613676144" beanClass="com.install4j.runtime.beans.screens.ComponentsScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.ComponentsScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="1613676145" beanClass="com.install4j.runtime.beans.screens.StandardProgramGroupScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.StandardProgramGroupScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="1613676146" beanClass="com.install4j.runtime.beans.screens.FileAssociationsScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.FileAssociationsScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="1613676147" beanClass="com.install4j.runtime.beans.screens.InstallationScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="true" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.InstallationScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions>
+              <action name="" id="1613676148" beanClass="com.install4j.runtime.beans.actions.InstallFilesAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.InstallFilesAction" />
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="1613676149" beanClass="com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction">
+                      <void property="programGroupName">
+                        <string>${compiler:WINDOWS_PROGRAM_GROUP}</string>
+                      </void>
+                      <void property="unixSymlinks">
+                        <boolean>false</boolean>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="1613676150" beanClass="com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction">
+                      <void property="itemName">
+                        <string>${compiler:MAIN_APP_FULL_NAME}.${compiler:APP_VERSION}</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+            </actions>
+            <formComponents />
+          </screen>
+          <screen name="" id="1613676151" beanClass="com.install4j.runtime.beans.screens.FinishedScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="true">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.FinishedScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions>
+              <action name="" id="1613680130" beanClass="com.install4j.runtime.beans.actions.desktop.CreateStartMenuEntryAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.desktop.CreateStartMenuEntryAction">
+                      <void property="entryName">
+                        <string>DuckHunt</string>
+                      </void>
+                      <void property="file">
+                        <object class="java.io.File">
+                          <string>bin/Duck Hunt</string>
+                        </object>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+            </actions>
+            <formComponents />
+          </screen>
+        </screens>
+      </application>
+      <application name="" id="uninstaller" beanClass="com.install4j.runtime.beans.applications.UninstallerApplication" enabled="true" commentSet="false" comment="" customIcnsFile="" customIcoFile="">
+        <serializedBean>
+          <java class="java.beans.XMLDecoder">
+            <object class="com.install4j.runtime.beans.applications.UninstallerApplication">
+              <void property="allowConsole">
+                <boolean>false</boolean>
+              </void>
+              <void property="resizable">
+                <boolean>false</boolean>
+              </void>
+              <void property="watermark">
+                <boolean>false</boolean>
+              </void>
+            </object>
+          </java>
+        </serializedBean>
+        <startup>
+          <screen name="" id="1613676153" beanClass="com.install4j.runtime.beans.screens.StartupScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.StartupScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+        </startup>
+        <screens>
+          <screen name="" id="1613676154" beanClass="com.install4j.runtime.beans.screens.UninstallWelcomeScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallWelcomeScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="1613676155" beanClass="com.install4j.runtime.beans.screens.UninstallationScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="false">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallationScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions>
+              <action name="" id="1613676156" beanClass="com.install4j.runtime.beans.actions.UninstallFilesAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.UninstallFilesAction" />
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="Delete installation directory" id="1613680106" beanClass="com.install4j.runtime.beans.actions.files.DeleteFileAction" enabled="true" commentSet="false" comment="" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.files.DeleteFileAction">
+                      <void property="file">
+                        <object class="java.io.File">
+                          <string>${installer:sys.installationDir}</string>
+                        </object>
+                      </void>
+                      <void property="recurse">
+                        <boolean>true</boolean>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+            </actions>
+            <formComponents />
+          </screen>
+          <screen name="" id="1613676157" beanClass="com.install4j.runtime.beans.screens.UninstallFailureScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="true">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallFailureScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="1613676158" beanClass="com.install4j.runtime.beans.screens.UninstallSuccessScreen" enabled="true" commentSet="false" comment="" rollbackBarrier="false" backButton="2" finishScreen="true">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallSuccessScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+        </screens>
+      </application>
+    </applications>
+  </installerGui>
+  <mediaSets>
+    <win32 name="Windows amd64 JDK_JCE" id="1613676206" mediaFileName="" installDir="Duck Hunt" overridePrincipalLanguage="true" requires64bit="true" jreBitType="64" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" includedJRE="windows-amd64-1.7.0_51" manualJREEntry="false" bundleType="1" jreURL="" jreFtpURL="" jreShared="false" directDownload="false" customInstallBaseDir="" createUninstallIcon="true" contentFilesType="1" downloadURL="" runAsAdmin="false">
+      <excludedLaunchers />
+      <excludedComponents />
+      <excludedBeans>
+        <bean refId="1613676404" />
+        <bean refId="1613676370" />
+      </excludedBeans>
+      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
+      <exclude />
+      <variables />
+    </win32>
+  </mediaSets>
+  <buildIds buildAll="true">
+    <mediaSet refId="1613675984" />
+  </buildIds>
+</install4j>
+

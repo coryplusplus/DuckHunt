@@ -1,0 +1,187 @@
+<project basedir="." name="Duck Hunt" default="build">
+    <description>OnQ Server</description>
+
+    <property file="${user.home}/build.properties" />
+    <property file="${basedir}/build.properties" />
+    <property file="${basedir}/../build/build.properties" />
+
+    <import file="buildlib.xml" />
+
+    <property name="dialerdrivers.lib" value="${dialerdrivers.home}/lib" />
+    <property name="dialerdrivers.etc" value="${dialerdrivers.home}/etc" />
+    <property name="distributed-commons.lib" value="${distributed-commons.home}/lib" />
+    <property name="models.lib" value="${models.home}/lib" />
+	<property name="webservices.lib" value="${webservices.home}/lib" />
+	<property name="webservices.etc" value="${webservices.home}/etc" />
+    <property name="vincio.lib" value="${vincio.home}/lib" />
+    <property name="vincio.etc" value="${vincio.home}/etc" />
+    <property name="vincioapp.lib" value="${vincioapp.home}/lib" />
+    <property name="commons.etc" value="${commons.home}/etc" />
+    <property name="models.etc" value="${models.home}/etc" />
+    <property name="uiframework.lib" value="${uiframework.home}/lib" />
+    <property name="uiframework.etc" value="${uiframework.home}/etc" />
+    <property name="statusserver.lib" value="${statusserver.home}/lib" />
+    <property name="configurationserver.lib" value="${configurationserver.home}/lib" />
+    <property name="auditserver.lib" value="${auditserver.home}/lib" />
+
+    <property name="MAJOR_VERSION" value="${ONQ_MAJOR_VERSION}" />
+    <property name="MINOR_VERSION" value="${ONQ_MINOR_VERSION}" />
+    <property name="UPDATE_VERSION" value="${ONQ_UPDATE_VERSION}" />
+    <property name="PATCH_VERSION" value="${ONQ_PATCH_VERSION}" />
+    <property name="BUILD_VERSION" value="${ONQ_BUILD_VERSION}" />
+
+    <path id="cp">
+        <pathelement path="${distdir}" />
+        <pathelement path="${classes}" />
+        <pathelement path="${basedir}" />
+        <pathelement path="${distetc}" />
+        <fileset dir="${lib}" includes="*.jar" />
+    	<pathelement path="${emma.jar}" />
+    </path>
+
+    <path id="test-cp">
+        <path refid="common-test-cp" />
+        <fileset dir="${lib}" includes="*.jar" />
+        <fileset dir="${dialerdrivers.lib}" includes="**/*.jar" />
+        <fileset dir="${distributed-commons.lib}" includes="**/*.jar" />
+        <fileset dir="${models.lib}" includes="**/*.jar" />
+        <fileset dir="${vincio.lib}" includes="**/*.jar" />
+        <fileset dir="${uiframework.lib}" includes="**/*.jar" />
+        <fileset dir="${dialerdrivers.lib}" includes="**/*.jar" />
+        <fileset dir="${vincio.etc}" includes="**/*.jar" />
+        <fileset dir="${vincioapp.lib}" includes="**/*.jar" />
+    	<fileset dir="${webservices.lib}" includes="**/*.jar" />
+    	<pathelement path="${configurationserver.lib}/configurationserver.jar" />
+        <pathelement path="${statusserver.lib}/statusserver.jar" />
+        <pathelement path="${testsrc}" />
+        <pathelement path="test/etc" />
+    </path>
+
+    <target name="prepare" depends="buildlib.prepare">
+        <mkdir dir="${distconnections}" />
+    </target>
+
+    <target name="copy-dist-files" depends="buildlib.copy-dist-files">
+        <copy todir="${distdir}/etc">
+            <fileset dir="${etc}" includes="*.xml" />
+        </copy>
+        <copy todir="${distdir}/etc/images">
+            <fileset dir="${etc}/images" />
+        </copy>
+    </target>
+
+    <target name="concat-sql">
+        <propertyregex property="sqlfile" input="${sqlpath}" regexp="(.*[/\\])*([^/\\]+)" select="\2" casesensitive="false" />
+
+        <concat destfile="${distdir}/sql/${sqlfile}" append="false" fixlastline="yes">
+            <fileset dir="${vincio.home}/sql" includes="${sqlfile}" />
+            <fileset dir="${sql}" includes="${sqlfile}" />
+        </concat>
+
+        <concat destfile="${distdir}/sql/reporting/${sqlfile}" append="false" fixlastline="yes">
+            <fileset dir="${commons.home}/sql/audit" includes="${sqlfile}" />
+            <fileset dir="${sql}/reporting" includes="${sqlfile}" />
+        </concat>
+    </target>
+
+    <target name="build" depends="compile-all, copy-dist-files,buildlib.create-version-file">
+        <jar basedir="${classes}" jarfile="${distdir}/lib/${distjar}">
+            <exclude name="test/*" />
+        </jar>
+    </target>
+
+    <target name="doc" depends="build">
+        <!-- currently not working, trying different approach used in commons, see extdoc-->
+        <javadoc destdir="${doc}/" packagenames="com.ali.*" sourcepath="${src}" />
+    </target>
+
+    <target name="extdoc" depends="build">
+        <property name="extdoc" value="${build}/extjavadoc" />
+        <mkdir dir="${extdoc}" />
+        <javadoc destdir="${extdoc}/" overview="${src}/com/ali/onqnx/generics/overview.html">
+            <!-- Specify all source files that we want to show to customers/partners -->
+            <fileset dir="${src}" defaultexcludes="yes">
+                <include name="*.java" />
+            </fileset>
+        </javadoc>
+    </target>
+
+    <target name="run-bootstrap">
+        <java classname="com.ali.onqnx.OnQServerStartup" fork="yes" dir="${distdir}">
+            <classpath refid="test-cp" />
+
+            <!-- to enable remote debug, uncomment the following line (change the port number): -->
+            <!-- jvmarg value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=8111"/ -->
+
+            <!-- to enable remote jprofiler with wait for the profiler to attach, uncomment the following 2 lines: -->
+            <!-- jvmarg value="-Xbootclasspath/a:C:\Program Files\jprofiler5\bin\agent.jar" / -->
+            <!-- jvmarg value="-agentlib:jprofilerti=port=8849" / -->
+            <!-- use this line instead of the previous one to start without a wait for jprofiler to attach: -->
+            <!-- jvmarg value="-agentlib:jprofilerti=port=8849,nowait,id=104,config=C:\Documents and Settings\bgooch\.jprofiler5\config.xml" / -->
+
+            <jvmarg value="-server" />
+            <jvmarg value="-Xms256m" />
+            <jvmarg value="-Xmx1024m" />
+            <jvmarg value="-XX:PermSize=256m" />
+            <jvmarg value="-XX:MaxPermSize=256m" />
+            <jvmarg value="-Xverify:none" />
+            <jvmarg value="-XX:+UseParallelGC" />
+            <jvmarg value="-Demma.coverage.out.file=${emma.coverage.dir}/coverage.emma" />
+            <jvmarg value="-Demma.coverage.out.merge=true" />
+
+            <jvmarg value="-Dcom.sun.management.jmxremote" />
+            <!-- spring does not use log4j, but apache commons logging. Apache commons has a log4j wrapper it can use that -->
+            <!-- allows us to configure it with log4j configuration by doing the following -->
+            <jvmarg value="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger" />
+
+            <!-- Our own JVM flag to control our JMX functionality. Be aware this is not the com.sun.management.jmxremote one...-->
+            <!--<jvmarg value="-Dcom.ali.commons.jmx.jmxremote"/>-->
+            <!-- Allows use of the Dashboard JMX Communication and Monitoring via JConsole Plugin package (onqmonitor) -->
+            <!-- <jvmarg value="-Dcom.ali.commons.jmx.level=6"/> -->
+
+            <!-- Allows you to monitor the threadPool -->
+            <!-- -Dcom.ali.distributed.core.component.impl.bus.scalingqueue.monitor -->
+
+            <!-- Delay between threadpool monitor polls (default 10 seconds)-->
+            <!-- -Dcom.ali.distributed.core.component.impl.bus.scalingqueue.monitor.delay=10000 -->
+        </java>
+    </target>
+
+    <target name="runCSLFactory">
+        <java classname="com.ali.onqnx.components.csl.factory.bootstrap.CSLFactoryBootstrap" fork="yes">
+            <classpath refid="test-cp" />
+        </java>
+    </target>
+
+    <target name="runRecordSourceFactory">
+        <java classname="com.ali.onqnx.components.recordsource.bootstrap.RecordSourceFactoryBootstrap" fork="yes">
+            <classpath refid="test-cp" />
+        </java>
+    </target>
+
+    <target name="runAccountFactory">
+        <java classname="com.ali.onqnx.components.accounts.factory.bootstrap.AccountFactoryBootstrap" fork="yes">
+            <classpath refid="test-cp" />
+        </java>
+    </target>
+
+    <target name="runSynchroController">
+        <java classname="com.ali.onqnx.components.synchro.bootstrap.SynchroControllerBootstrap" fork="yes">
+            <classpath refid="test-cp" />
+        </java>
+    </target>
+
+    <target name="runDialerController">
+        <java classname="com.ali.onqnx.components.dialer.controller.bootstrap.DialerControllerBootstrap" fork="yes">
+            <classpath refid="test-cp" />
+        </java>
+    </target>
+
+    <target name="runFileShredder">
+        <java classname="com.ali.onqnx.gemini.commands.LaunchFileShredder" fork="yes">
+            <classpath refid="test-cp" />
+            <arg value="file:./data/ct_test_file.5k.txt" />
+            <arg value="file:./data/ctmft.csv" />
+        </java>
+    </target>
+</project>
