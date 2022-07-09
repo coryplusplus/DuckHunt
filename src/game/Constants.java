@@ -2,9 +2,6 @@ package game;
 
 public class Constants {
 
-	public static String DUCK1 = "etc/images/duck1.PNG";
-	public static String DUCK2 = "etc/images/duck1.PNG";
-
 	public static final String SHOTS_0 = "etc/images/shots0.jpg";
 	public static final String SHOTS_1 = "etc/images/shots1.jpg";
 	public static final String SHOTS_2 = "etc/images/shots2.jpg";
