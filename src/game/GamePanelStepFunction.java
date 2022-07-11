@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-class MainPanel extends JPanel {
+class GamePanelStepFunction extends JPanel {
 	/**
 		 *
 		 */
@@ -18,7 +18,7 @@ class MainPanel extends JPanel {
 	public JFrame game;
 	public String username;
 
-	public MainPanel(JFrame gameFrame, String username) {
+	public GamePanelStepFunction(JFrame gameFrame, String username) {
 		this.game = gameFrame;
 		this.username = username;
 		buildUIMaps();
@@ -78,27 +78,28 @@ class MainPanel extends JPanel {
 
 	}
 
-	public void add(Duck b) {
-		ducks.add(b);
+	public void add(Duck duck)
+	{
+		ducks.add(duck);
 	}
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		ImageIcon screen = new ImageIcon();
-		if (Stats.NumberShots == Stats.chancestoshoot && Stats.DOG == 0)
+		if (GameState.NumberShots == GameState.chancestoshoot && GameState.DOG == 0)
 			screen = new ImageIcon("etc/images/gamescreenpink.PNG");
 		else
 			screen = new ImageIcon("etc/images/gamescreen.PNG");
 		g.drawImage(screen.getImage(), 0, 0, 800, 750, this);
 
-		if (Stats.showIntro) {
+		if (GameState.showIntro) {
 			ImageIcon dog = new ImageIcon();
 			dog = new ImageIcon(Constants.dogWalking);
-			g.drawImage(dog.getImage(), Stats.DOGX, 450, 200, 200, this);
-			Stats.DOGX += 1;
-			if (Stats.DOGX > 300) {
-				Stats.DOGX = 0;
-				Stats.showIntro = false;
+			g.drawImage(dog.getImage(), GameState.DOGX, 450, 200, 200, this);
+			GameState.DOGX += 1;
+			if (GameState.DOGX > 300) {
+				GameState.DOGX = 0;
+				GameState.showIntro = false;
 			}
 
 		} else {
@@ -109,26 +110,26 @@ class MainPanel extends JPanel {
 				ImageIcon round = new ImageIcon();
 				ImageIcon score = new ImageIcon();
 
-				bullets = new ImageIcon(shotMap.get(Stats.NumberShots));
-				duckcount = new ImageIcon(hitMap.get(Stats.duckcount));
-				round = new ImageIcon(roundMap.get(Stats.round));
-				score = new ImageIcon(scoreMap.get(Stats.duckskilled));
-				Stats.score = Stats.duckskilled * 10;
+				bullets = new ImageIcon(shotMap.get(GameState.NumberShots));
+				duckcount = new ImageIcon(hitMap.get(GameState.duckcount));
+				round = new ImageIcon(roundMap.get(GameState.round));
+				score = new ImageIcon(scoreMap.get(GameState.duckskilled));
+				GameState.score = GameState.duckskilled * 10;
 
-				if (Stats.NumberShots == 3) {
-					if (Stats.rotate == 0)
+				if (GameState.NumberShots == 3) {
+					if (GameState.rotate == 0)
 						bullets = new ImageIcon(Constants.SHOTS_0);
 					else {
 						bullets = new ImageIcon("noshot.jpg");
 					}
-					Stats.setrotate();
+					GameState.setrotate();
 				}
-				if (Stats.duckcount == 10) {
+				if (GameState.duckcount == 10) {
 					duckcount = new ImageIcon(Constants.HIT_10);
-					Stats.duckcount = 0;
-					Stats.round++;
-					Stats.showIntro = true;
-					if (Stats.round > 3) {
+					GameState.duckcount = 0;
+					GameState.round++;
+					GameState.showIntro = true;
+					if (GameState.round > 3) {
 						this.game.dispose();
 						HighScore.FileScore(username);
 					}
@@ -140,19 +141,19 @@ class MainPanel extends JPanel {
 				g.drawImage(score.getImage(), 600, 630, 104, 54, this);
 				ImageIcon duck = new ImageIcon("etc/images/duckflying.GIF");
 				// prints the dog to the screen
-				if (b.getIsHit() == 1 && Stats.DOG > 0) {
+				if (b.getIsHit() == 1 && GameState.DOG > 0) {
 					ImageIcon kill = new ImageIcon("etc/images/kill1.gif");
 					g.drawImage(kill.getImage(), 360, 400, 100, 100, this);
 					// integer in the if statement determines how long dog
 					// appears
 					// for
-					if (Stats.DOG < 175) {
-						Stats.DOG++;
+					if (GameState.DOG < 175) {
+						GameState.DOG++;
 					} else {
 						b.setHit(0);
-						Stats.DOG = 0;
-						b.setDX(Stats.difficulty);
-						b.setDY(Stats.difficulty);
+						GameState.DOG = 0;
+						b.setDX(GameState.difficulty);
+						b.setDY(GameState.difficulty);
 						b.setX(generator.nextInt(400));
 						b.setY(generator.nextInt(5));
 						DuckThread.count = 0;
@@ -160,27 +161,27 @@ class MainPanel extends JPanel {
 				}
 				// prints the duck flying across the screen
 				if (b.getIsHit() != 1
-						&& Stats.NumberShots < Stats.chancestoshoot
-						&& Stats.DOG == 0) {
+						&& GameState.NumberShots < GameState.chancestoshoot
+						&& GameState.DOG == 0) {
 					g.drawImage(duck.getImage(), b.getX(), b.getY(),
 							b.getXSIZE(), b.getYSIZE(), this);
 				}
 				// prints the duck falling to the ground
 				if (b.getIsHit() == 1
-						&& Stats.NumberShots < Stats.chancestoshoot
-						&& Stats.DOG == 0) {
+						&& GameState.NumberShots < GameState.chancestoshoot
+						&& GameState.DOG == 0) {
 					if (b.getY() < 450) {
 						ImageIcon falling = new ImageIcon(
 								"etc/images/duckfall.GIF");
-						System.out.println(Stats.DOG);
+						System.out.println(GameState.DOG);
 						g.drawImage(falling.getImage(), b.getX() - 10,
 								b.getY() - 10, b.getXSIZE(), b.getYSIZE(), this);
 					} else {
-						Stats.DOG++;
+						GameState.DOG++;
 					}
 				}
 				// prints the duck flying away because out of bullets.
-				if (Stats.NumberShots == Stats.chancestoshoot && Stats.DOG == 0) {// &&b.getIsHit()!=1){
+				if (GameState.NumberShots == GameState.chancestoshoot && GameState.DOG == 0) {// &&b.getIsHit()!=1){
 					if (b.getY() > 0) {
 						{
 							ImageIcon flyaway = new ImageIcon(
@@ -192,14 +193,14 @@ class MainPanel extends JPanel {
 									b.getXSIZE(), b.getYSIZE(), this);
 						}
 					} else {
-						Stats.NumberShots = 0;
-						b.setDX(Stats.difficulty);
-						b.setDY(Stats.difficulty);
+						GameState.NumberShots = 0;
+						b.setDX(GameState.difficulty);
+						b.setDY(GameState.difficulty);
 						b.setX(generator.nextInt(400));
 						b.setY(generator.nextInt(5));
 						DuckThread.count = 0;
-						Stats.duckcount++;
-						Stats.difficulty += .05;
+						GameState.duckcount++;
+						GameState.difficulty += .05;
 
 					}
 

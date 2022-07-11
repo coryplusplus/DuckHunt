@@ -5,37 +5,21 @@ import java.awt.*;
 
 public class GameBuilder {
 
-    public GamePanel mainGamePanel;
+    public GameController mainGameController;
     public static JFrame gameFrame;
-    public JFrame introFrame;
+    public TitleFrame titleFrame;
 
 
     public GameBuilder()
     {
         this.gameFrame = new JFrame("Duck Hunt");
-        this.introFrame =  new JFrame("Duck Hunt");
-        this.mainGamePanel = new GamePanel(gameFrame);
-        buildIntro();
+        this.titleFrame =  new TitleFrame();
+        this.mainGameController = new GameController(titleFrame,gameFrame);
+        setup();
 
     }
 
-    public  void buildIntro() {
-        mainGamePanel.introSetup();
-        introFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        introFrame.setPreferredSize(new Dimension(600, 550));
-        JPanel content = (JPanel) introFrame.getContentPane();
-        content.setBackground(Color.black);
-        content.setLayout(new FlowLayout());
-
-        final MainComponent picture = new MainComponent();
-        picture.setOpaque(true);
-        picture.setPreferredSize(new Dimension(500, 500));
-        String introscreen = "intro";
-        picture.draw(introscreen);
-
-        content.add(picture);
-        content.add(mainGamePanel.getPanel());
-        introFrame.pack();
-        introFrame.setVisible(true);
+    public  void setup() {
+        mainGameController.introSetup();
 
     }}

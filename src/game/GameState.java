@@ -1,6 +1,6 @@
 package game;
 
-class Stats {
+class GameState {
 	public static int score = 0;
 	public static int NumberShots = 0;
 	public static int chancestoshoot = 3;

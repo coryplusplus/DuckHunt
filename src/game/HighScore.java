@@ -38,7 +38,7 @@ class HighScore {
 
 			// Print a line of text
 			new PrintStream(fout).println(username + " : "
-					+ Stats.score);
+					+ GameState.score);
 			for (int z = 0; z < lines.size(); z++) {
 				new PrintStream(fout).println(lines.elementAt(z));
 			}

@@ -1,11 +1,6 @@
 package game;
 
-import java.awt.*;
-import java.awt.event.*;
-
-import javax.swing.*;
-
-public class DuckHuntRunner {
+public class RunGame {
 
 
 

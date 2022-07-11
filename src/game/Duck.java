@@ -3,8 +3,21 @@ package game;
 import java.awt.*;
 import java.util.Random;
 
-class Duck {
-    public Duck() {
+public class Duck {
+
+    private int XSIZE;
+    private int YSIZE;
+    // determines if the duck has been hit or not
+    private int IsHit;
+
+    private double x = 0;
+    private double y = 0;
+    private double dx = 1;
+    private double dy = 1;
+
+
+    public Duck()
+    {
         Random generator = new Random();
         new Color(generator.nextInt(255), generator.nextInt(255),
                 generator.nextInt(255));
@@ -84,13 +97,4 @@ class Duck {
         dy = x;
     }
 
-    private int XSIZE;
-    private int YSIZE;
-    // determines if the duck has been hit or not
-    private int IsHit;
-
-    private double x = 0;
-    private double y = 0;
-    private double dx = 1;
-    private double dy = 1;
 }
