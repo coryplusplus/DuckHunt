@@ -9,8 +9,9 @@
 high performance e-commerce extension for TYPO3!  You can install it in your
 existing TYPO3 web site within 5 minutes and can adapt, extend, overwrite
 and customize anything to your needs.
+![](https://github.com/coryplusplus/DuckHunt/blob/master/etc/images/DuckHuntHomeScreen.png)
 
-(https://github.com/coryplusplus/DuckHunt/blob/master/etc/images/DuckHuntHomeScreen.png)
+
 
 ## Table of content
 
