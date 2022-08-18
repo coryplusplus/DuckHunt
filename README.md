@@ -10,7 +10,7 @@ high performance e-commerce extension for TYPO3!  You can install it in your
 existing TYPO3 web site within 5 minutes and can adapt, extend, overwrite
 and customize anything to your needs.
 
-[![Aimeos TYPO3 demo](https://aimeos.org/fileadmin/user_upload/typo3-demo.jpg)](http://typo3.demo.aimeos.org/)
+[![Aimeos TYPO3 demo]((https://github.com/Coryplusplus/DuckHunt/etc/images/DuckHuntHomeScreen.png))](http://typo3.demo.aimeos.org/)
 
 ## Table of content
 
