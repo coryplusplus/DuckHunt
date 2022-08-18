@@ -1,5 +1,5 @@
 <a href="https://aimeos.org/">
-    <img src="https://github.com/coryplusplus/DuckHunt/blob/master/etc/images/char_dog_walking.gif" alt="Aimeos logo" title="Aimeos" align="right" height="60" />
+    <img src="https://coryplusplus.s3.us-east-2.amazonaws.com/char_dog_walking.gif" alt="Aimeos logo" title="Aimeos" align="right" height="60" />
 </a>
 
 # Duck Hunt
