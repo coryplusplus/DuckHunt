@@ -4,11 +4,22 @@
 
 # Duck Hunt
 
+Video games were a huge motivation and the reason I chose to become a software developer.
 
-[Aimeos](https://aimeos.org/TYPO3) is THE professional, full-featured and
-high performance e-commerce extension for TYPO3!  You can install it in your
-existing TYPO3 web site within 5 minutes and can adapt, extend, overwrite
-and customize anything to your needs.
+If you are anything like me, learning to code was most fun when I was working on games!
+
+When I was in college (10+ years ago) final project in my first ever Java class was to code a game.
+
+I chose DuckHunt!
+
+I want to share with you the source code of the game DuckHunt written solely in Java using Java AWT Events and Java Swing.
+
+Please make the code better, clean it up, add new images, etc.
+Have fun with it.
+
+I hope it helps you on your learning journey
+
+
 ![](https://github.com/coryplusplus/DuckHunt/blob/master/etc/images/DuckHuntHomeScreen.png)
 ![](https://github.com/coryplusplus/DuckHunt/blob/master/etc/images/DuckHuntActionShot1.png)
 ![](https://github.com/coryplusplus/DuckHunt/blob/master/etc/images/DuckHuntActionShot2.png)
