@@ -2,7 +2,7 @@
     <img src="https://coryplusplus.s3.us-east-2.amazonaws.com/char_dog_walking.gif" alt="Aimeos logo" title="Aimeos" align="right" height="60" />
 </a>
 
-# Duck Hunt ![](https://coryplusplus.s3.us-east-2.amazonaws.com/duckflying.gif)
+![](https://coryplusplus.s3.us-east-2.amazonaws.com/duckflying.gif) # Duck Hunt ![](https://coryplusplus.s3.us-east-2.amazonaws.com/duckflying.gif)
 
 Video games were a huge motivation and the reason I chose to become a software developer.
 
