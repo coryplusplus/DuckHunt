@@ -20,9 +20,9 @@ Have fun with it.
 I hope it helps you on your learning journey
 
 
-![](https://github.com/coryplusplus/DuckHunt/blob/master/etc/images/DuckHuntHomeScreen.png)
-![](https://github.com/coryplusplus/DuckHunt/blob/master/etc/images/DuckHuntActionShot1.png)
-![](https://github.com/coryplusplus/DuckHunt/blob/master/etc/images/DuckHuntActionShot2.png)
+![](https://coryplusplus.s3.us-east-2.amazonaws.com/DuckHuntHomeScreen.png)
+![](https://coryplusplus.s3.us-east-2.amazonaws.com/DuckHuntActionShot1.png)
+![](https://coryplusplus.s3.us-east-2.amazonaws.com/DuckHuntActionShot2.png)
 
 
 
