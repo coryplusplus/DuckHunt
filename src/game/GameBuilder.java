@@ -6,14 +6,14 @@ import java.awt.*;
 public class GameBuilder {
 
     public GameController mainGameController;
-    public static JFrame gameFrame;
+    public GameFrame gameFrame;
     public TitleFrame titleFrame;
 
 
-    public GameBuilder()
+    public GameBuilder(String gameTitle)
     {
-        this.gameFrame = new JFrame("Duck Hunt");
-        this.titleFrame =  new TitleFrame();
+        this.gameFrame = new GameFrame(gameTitle);
+        this.titleFrame =  new TitleFrame(gameTitle);
         this.mainGameController = new GameController(titleFrame,gameFrame);
         setup();
 

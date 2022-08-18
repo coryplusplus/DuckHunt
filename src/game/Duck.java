@@ -81,14 +81,6 @@ public class Duck {
         IsHit = x;
     }
 
-    public int getDX() {
-        return (int) dx;
-    }
-
-    public int getDY() {
-        return (int) dy;
-    }
-
     public void setDX(double x) {
         dx = x;
     }

@@ -15,9 +15,9 @@ class TitleFrame extends JFrame {
         return buttonPanel;
     }
 
-    public TitleFrame()
+    public TitleFrame(String gameTitle)
     {
-        setTitle("DuckHunt");
+        this.setTitle(gameTitle);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(600, 550));
 

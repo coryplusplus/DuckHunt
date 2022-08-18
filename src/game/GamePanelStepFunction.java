@@ -186,9 +186,6 @@ class GamePanelStepFunction extends JPanel {
 						{
 							ImageIcon flyaway = new ImageIcon(
 									"etc/images/backofduck.GIF");
-							// ImageIcon flyawaytext = new
-							// ImageIcon("FLYAWAY.JPG");
-							// g.drawImage(flyawaytext.getImage(),350,250,150,75,this);
 							g.drawImage(flyaway.getImage(), b.getX(), b.getY(),
 									b.getXSIZE(), b.getYSIZE(), this);
 						}

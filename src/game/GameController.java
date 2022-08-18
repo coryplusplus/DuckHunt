@@ -14,7 +14,7 @@ public class GameController {
 
     //These frames are passed in from the GameBuilder
     public TitleFrame titleFrame;
-    public JFrame gameFrame;
+    public GameFrame gameFrame;
 
     public static final int DEFAULT_WIDTH = 1;
     public static final int DEFAULT_HEIGHT = 1;
@@ -22,7 +22,7 @@ public class GameController {
     public static final int DELAY = 3;
 
 
-    public GameController(TitleFrame titleFrame, JFrame gameFrame)
+    public GameController(TitleFrame titleFrame, GameFrame gameFrame)
     {
         this.titleFrame = titleFrame;
         this.gameFrame = gameFrame;
@@ -46,21 +46,17 @@ public class GameController {
             @SuppressWarnings("deprecation")
             public void actionPerformed(ActionEvent evt) {
                 gameController.titleFrame.dispose();
-                gameController.gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                gameController.gameFrame.setPreferredSize(new Dimension(800, 750));
-                gameController.gameFrame.setResizable(false);
-                final GamePanelStepFunction panel = new GamePanelStepFunction(gameController.gameFrame, gameController.titleFrame.getButtonPanel().userName.getText());
-                panel.setPreferredSize(new Dimension(DEFAULT_WIDTH,
+                final GamePanelStepFunction stepFunctionPanel = new GamePanelStepFunction(gameController.gameFrame, gameController.titleFrame.getButtonPanel().userName.getText());
+                stepFunctionPanel.setPreferredSize(new Dimension(DEFAULT_WIDTH,
                         DEFAULT_HEIGHT));
-                gameController.gameFrame.add(panel);// , BorderLayout.CENTER);
+                gameController.gameFrame.add(stepFunctionPanel);// , BorderLayout.CENTER);
                 Duck d = new Duck();
-                panel.add(d);
+                stepFunctionPanel.add(d);
                 Runnable r = new DuckThread(d, gameController.gameFrame);
                 Thread t = new Thread(r);
                 t.start();
-                gameController.gameFrame.setCursor(Cursor.CROSSHAIR_CURSOR);
-                gameController.gameFrame.pack();
-                gameController.gameFrame.setVisible(true);
+
+                gameController.gameFrame.showPanel();
             }
         });
     }

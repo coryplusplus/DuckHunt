@@ -9,7 +9,7 @@ public class RunGame {
 		// URL codeBase = new URL
 		// ("http://vgmusic.com//music//console/nintendo/nes/Duck_Hunt.mid");
 		// au = getAudioClip(codeBase);
-		GameBuilder gameBuilder = new GameBuilder();
+		GameBuilder gameBuilder = new GameBuilder("DuckHunt");
 
 	}
 
