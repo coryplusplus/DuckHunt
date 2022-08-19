@@ -37,7 +37,7 @@ I hope it helps you on your learning journey
 Simply git clone the source code and import to an IDE of your choice. You will need to have JDK 1.7 or JDK 1.8 installed 
 
 ## Running
-```
+```java
 package game;
 
 public class RunGame {
