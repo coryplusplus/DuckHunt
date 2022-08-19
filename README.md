@@ -34,7 +34,7 @@ I hope it helps you on your learning journey
 
 ## Installation
 
-To avoid that, change your database settings in your `./typo3conf/LocalConfiguration.php` to:
+Simply git clone the source code and import to an IDE of your choice. You will need to have JDK 1.7 or JDK 1.8 installed 
 
 ## Running
 ```
