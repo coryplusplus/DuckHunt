@@ -37,6 +37,8 @@ I hope it helps you on your learning journey
 Simply git clone the source code and import to an IDE of your choice. You will need to have JDK 1.7 or JDK 1.8 installed 
 
 ## Running
+
+All you need to do is run the main method inside of the RunGame.java class. This will boot up the game and let you start playing. 
 ```java
 package game;
 
